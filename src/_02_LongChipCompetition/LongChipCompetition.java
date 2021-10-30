@@ -15,7 +15,15 @@ public class LongChipCompetition {
 
     public static void main(String[] args) {
         LongChipCompetition lcc = new LongChipCompetition();
+        lcc.initializeBeatles();
+    	for(int person = 0; person < lcc.getTheBand().size(); person++){
+        	//for(int chip = 0; chip < lcc.getTheBand(george); chip++){
+        		
+        	//}
 
+    	}
+
+        
     }
 
     private void initializeBeatles() {
@@ -27,6 +35,7 @@ public class LongChipCompetition {
         theBeatles.add(john);
         theBeatles.add(paul);
         theBeatles.add(ringo);
+
     }
 
     public ArrayList<Beatle> getTheBand(){

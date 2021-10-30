@@ -9,7 +9,7 @@ public class _01_IntroToArrayLists {
     	ArrayList<String> colors = new ArrayList<String>();
 
         // 2. Add five Strings to your list
-        colors.add("red");
+        colors.add("pink");
         colors.add("orange");
         colors.add("yellow");
         colors.add("green");
@@ -37,10 +37,18 @@ public class _01_IntroToArrayLists {
 
         // 6. Print all the Strings in reverse order.
         System.out.println("Print all the Strings in reverse order");
+        for(int i = colors.size()-1; i >= 0; i--){
+        	System.out.println(colors.get(i));
+        }
        
-        
+
 
         // 7. Print only the Strings that have the letter 'e' in them.
+        System.out.println("Print only the Strings that have the letter 'e' in them");
+        for(int i = 0; i < colors.size(); i++){
+        	if(colors.get(i).contains("e"))
+        		System.out.println(colors.get(i));
+        }
         
     }
 }
