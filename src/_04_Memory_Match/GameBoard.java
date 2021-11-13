@@ -55,17 +55,15 @@ public class GameBoard extends JFrame implements ActionListener {
     		if(i%4==0) {
     			value += 1;
     		}
-    		if(value == 14) {
-    			value = 1;
-    		}
     		cards.add(new Card(value));
-    		cards.get(i).addActionListener(this);    		
+    		cards.get(i).addActionListener(this);    
+    		//cards.get(i).setFaceUpIcon(Card.cardImagesPath + (i+1) + ".png");
     	}
 
         
         // 4. Use Collections.shuffle() method to randomize the order of
         //    the cards in the ArrayList
-    	//Collections.shuffle(cards);
+    	Collections.shuffle(cards);
         
         
         // 5. Initialize the panel variable declared above
@@ -92,9 +90,8 @@ public class GameBoard extends JFrame implements ActionListener {
     public void drawCards() {
     	for(int i = 0; i < cards.size(); i++){
     		cards.get(i).draw();
+    		
     	}
-
-        
     }
     
     // 10. 
