@@ -77,6 +77,11 @@ public class _02_LogSearch implements ActionListener {
 		button3.addActionListener(this);
 		button3.setText("View List");
 		
+		button4 = new JButton();
+		panel.add(button4);
+		button4.addActionListener(this);
+		button4.setText("Remove Entry");
+		
 		frame.pack();
 
 	}
@@ -111,6 +116,21 @@ public class _02_LogSearch implements ActionListener {
 	        }
 			
 			JOptionPane.showMessageDialog(null, string);
+	        	
+		}
+		
+		if(e.getSource() == button4) {
+			String removeID = JOptionPane.showInputDialog(null, "Enter an ID number:");
+			int id = Integer.parseInt(removeID);
+
+	        if(rosterOfIDs.containsKey(id)) {
+	        	rosterOfIDs.remove(id);
+	        	JOptionPane.showMessageDialog(null, "ID: " + id + " was removed" );
+
+	        }	
+	        else {
+	        	JOptionPane.showMessageDialog(null, "entry does not exist" );
+	        }
 	        	
 		}
 		
