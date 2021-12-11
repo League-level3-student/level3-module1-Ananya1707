@@ -28,23 +28,20 @@ public class MeetingScheduler {
         HashMap<String,ArrayList<Integer>> person1s = person1.getSchedule();
         HashMap<String,ArrayList<Integer>> person2s = person2.getSchedule(); 
         Schedule availabilty = new Schedule();
-
-       // System.out.println(person1.getSchedule().get("Monday"));
-        //System.out.println(person2.getSchedule().get("Tuesday"));
-        
-        
-//        if(person1s.containsKey("Monday") && person2s.containsKey("Monday")) {
-//        	for(int i = 0; i< person1s.get("Monday").size(); i++) {
-//        		for(int j = 0; j< person2s.get("Monday").size(); j++) {
-//        			if(person1s.get("Monday").get(i) == person2s.get("Monday").get(j)) {
-//        			}
-//        		}
-//        	}
-//        }
+        String[] dayOfWeek = {"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
 
        
+       for(String day: dayOfWeek) {
+    	   if(person1s.containsKey(day) && person2s.containsKey(day)) {
+			   ArrayList <Integer> p1 = person1s.get(day);
+			   for(int a = 0; a<p1.size();a++) {
+				   if(person2s.get(day).contains(p1.get(a))) {
+					   availabilty.addAvailability(day, p1.get(a));
+    				}
+			   }
+          }
+       }
 
-        
-        return null;
+        return availabilty;
     }
 }
