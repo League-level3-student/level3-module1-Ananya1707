@@ -46,14 +46,21 @@ public class CaliforniaWeather {
         if( datum == null ) {
             System.out.println("Unable to find weather data for: " + cityName);
         } else {
+        	JOptionPane.showMessageDialog(null, cityName + " is " + datum.weatherSummary + " with a temperature of " + datum.temperatureF + " F");
             System.out.println(cityName + " is " + datum.weatherSummary + " with a temperature of " + datum.temperatureF + " F");
         }
         
         String input2 = JOptionPane.showInputDialog("specify a weather condition");
-        for(int i = 0; i<weatherData.size();i++) {
-        	if(weatherData.containsValue(input2)) {
+        
+        for(String city: weatherData.keySet()) {
+        	String cityWeatherSummary = weatherData.get(city).weatherSummary;
+        	if(cityWeatherSummary.contains(Utilities.capitalizeWords(input2))){
+        		System.out.println(city);
         	}
         }
+        
+        String input3 = JOptionPane.showInputDialog("enter a minimum and maximum temperature");
+
 
     }
 }
