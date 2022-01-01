@@ -130,8 +130,9 @@ public class WorldClocks implements ActionListener {
         System.out.println(timeStr1);
         textArea1.setText(city1 + "\n" + dateStr1 + "\n" + timeStr1);
         
-        if(arg0.equals(button)) {
+        if(arg0.getSource() ==  button) {
         	userCity = JOptionPane.showInputDialog("city name");
+        	System.out.println("hi");
         }
         
        
