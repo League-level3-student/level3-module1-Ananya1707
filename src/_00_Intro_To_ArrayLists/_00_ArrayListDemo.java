@@ -1,6 +1,7 @@
 package _00_Intro_To_ArrayLists;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class _00_ArrayListDemo {
     public static void main(String[] args) {
@@ -9,7 +10,7 @@ public class _00_ArrayListDemo {
          * Declaring and Initializing an ArrayList of Strings
          */
         ArrayList<String> names = new ArrayList<String>();
-
+        
         names.add("Jan");
         names.add("Sara");
         names.add("Fred");
